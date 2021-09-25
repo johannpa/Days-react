@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Dayjs  from 'react-dayjs';
 
 function App() {
+  const date = "2021-12-31T12:59-0500"; 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dayjs 
+        element="span" 
+        className="date" 
+        add={{ days: 4 }}
+        >{date}</Dayjs>
+      <br />
+      <Dayjs element="span" format="DD-MM-YYYY / HH:mm:ss" />
     </div>
   );
 }
